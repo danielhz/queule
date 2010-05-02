@@ -2,3 +2,11 @@
 
 And template system for xhtml, implemented in Javascript and based in
 some ideas of XTiger.
+
+== Using queule
+
+=== The template body
+
+==== Inclusion of types
+
+  <p><q:use types="string">Edit here!</q:use></p>
