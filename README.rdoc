@@ -1,9 +1,46 @@
 = Queule
 
-And template system for xhtml, implemented in Javascript and based in
+A templating system for XHTML, implemented in Javascript and based in
 some ideas of XTiger.
 
+== Introduction
+
+Queule includes an XML language for specifying document templates. Queule
+templates are intended to guide an editing tool for building documents
+that follow a predefined model. Like XTiger, the Queule language is used
+jointly with another XML language, typically XHTML, which is called the
+target language. A template is a target language document where Queule
+elements indicate how the document can be edited and still conform with
+the model. As XTiger is a tool for document editing, it can only send
+the entire document after editing. Unlike XTiger, the Queule is a tool
+for editing data. Thus, Queule can send partial changes in a document as
+a set of RDF triples. Queule is a versatile tool to build templates
+that constrains the structure of documents that are editing interfaces
+to databases.
+
+For example, a server could send you an XHTML file that includes this code:
+
+  <q:use about="/people/123" type="person">
+    <div class="person">
+      <p class="name">
+        <q:use property="foaf:givenname" types="string">given name</q:use>
+        <q:use property="foaf:familyname" types="string">family name</q:use>
+      </p>
+      <p class="homepage">
+        <q:use property="foaf:homepage" types="string">homepage</q:use>
+      </p>
+    </div>
+  </q:use>
+
+Then, if you click on "given name" the template will show up a text field.
+After you edit it will send an asyncronous request with a RDF triple like
+this:
+
+   </people/123> foaf:givenname "Jhon" .
+
 == Using queule
+
+== Queule specification
 
 === The template body
 
