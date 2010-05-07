@@ -47,4 +47,26 @@ it is only an example to show how Queule works.
 
 ==== Inclusion of types
 
+In the document structure the +use+ element indicates what type(s) of
+element can appear at that position in an instance. Only one element
+of the specified type(s) can appear at that position in an instance
+document. Also the +use+ element is the basic component for coding
+triples in the document. The subject URI must be found recursively
+starting in the parent node. If there is a node with an +about+
+property that is the subject URI, else the subject URI is the document
+URI. The predicate uri is specified by the +property+ attribute of the
++use+ element and the object must be found in the content of the +use+
+element.
+
+  <!ELEMENT use ANY>
+  <!ATTLIST use
+      property       CDATA           #REQUIRED
+      label          NMTOKEN         #IMPLIED
+      types          CDATA           #REQUIRED
+      option         (set|unset)     #IMPLIED
+      currentType    CDATA           #IMPLIED
+      initial        (true)          #IMPLIED>
+
+===== Ejemplo
+
   <h1><q:use property="dc:title" types="string">Title</q:use></h1>
