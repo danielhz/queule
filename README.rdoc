@@ -67,6 +67,6 @@ element.
       currentType    CDATA           #IMPLIED
       initial        (true)          #IMPLIED>
 
-===== Ejemplo
+===== Example
 
   <h1><q:use property="dc:title" types="string">Title</q:use></h1>
