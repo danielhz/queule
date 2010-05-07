@@ -20,17 +20,15 @@ to databases.
 
 For example, a server could send you an XHTML file that includes this code:
 
-  <q:use about="/people/123" type="person">
-    <div class="person">
-      <p class="name">
-        <q:use property="foaf:givenname" types="string">given name</q:use>
-        <q:use property="foaf:familyname" types="string">family name</q:use>
-      </p>
-      <p class="homepage">
-        <q:use property="foaf:homepage" types="string">homepage</q:use>
-      </p>
-    </div>
-  </q:use>
+  <div about="/people/123">
+    <p>
+      <q:use property="foaf:givenname" types="string">given name</q:use>
+      <q:use property="foaf:familyname" types="string">family name</q:use>
+    </p>
+    <p>
+      <q:use property="foaf:homepage" types="string">homepage</q:use>
+    </p>
+  </div>
 
 Then, if you click on "given name" the template will show up a text field.
 After you edit it will send an asyncronous request with a RDF triple like
@@ -46,4 +44,4 @@ this:
 
 ==== Inclusion of types
 
-  <p><q:use types="string">Edit here!</q:use></p>
+  <h1><q:use property="dc:title" types="string">Title</q:use></h1>
