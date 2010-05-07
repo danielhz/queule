@@ -36,7 +36,7 @@ this:
 
    </people/123> foaf:givenname "John" .
 
-Obiously we must use valid URIs in subjects and in predicates, but
+Obiously we must use valid URIs in subjects and predicates, but
 it is only an example to show how Queule works.
 
 == Using queule
