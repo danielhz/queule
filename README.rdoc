@@ -34,7 +34,7 @@ Then, if you click on "given name" the template will show up a text field.
 After you edit it will send an asyncronous request with a RDF triple like
 this:
 
-   </people/123> foaf:givenname "Jhon" .
+   </people/123> foaf:givenname "John" .
 
 == Using queule
 
