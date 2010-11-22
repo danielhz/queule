@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Questionnaire Template</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/queule.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="../../lib/prototype.js"></script>
+    <script type="text/javascript" src="../../lib/queule.js"></script>
+    <script type="text/javascript">
+      window.onload = function() { startQueule(); }
+    </script>
+  </head>
+
+  <body>
+
+    <h1>Questionnaire template</h1>
+
+    <p>
+      This template defines a simple questionnaire. The questionnaire
+      is structured by sections. Each section is composed by a list
+      of questions. Also, each question has a list of possible
+      alternatives.
+    </p>
+
+    <!-- The #queule-library div defines types for this template. -->
+    <library>
+      <component name="QuestionnaireSection">
+	<div class="questionnaire-section">
+	  <h2 class="questionnaire-section-title">
+	    <use types="text">
+	      <yield type="text" delete="no">Section title</yield>
+	    </use>
+	  </h2>
+	  <div><use types="textarea" label="Add instructions or a description to this section"/></div>
+	  <ol><use types="QuestionnaireQuestion" label="Add a question" repeat="true"/></ol>
+	</div>
+      </component>
+      <component name="QuestionnaireQuestion">
+	<li class="questionnaire-question">
+	  <p><use types="text"><yield type="text" delete="no">Question description</yield></use></p>
+	  <p>
+	    weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>
+	    type:  <use types="text"><yield type="text" delete="no">radio</yield></use>
+	  </p>
+	  <div>
+	    <ul>
+	      <use types="Alternative" label="Add a alternative" repeat="true">
+		<yield type="Alternative">
+		  <li>
+		    <p><use types="text"><yield type="text" delete="no">Yes</yield></use></p>
+		    <p>
+		      score: <use types="text"><yield type="text" delete="no">1.0</yield></use>
+		    </p>
+		  </li>
+		</yield>
+		<yield type="Alternative">
+		  <li>
+		    <p><use types="text"><yield type="text" delete="no">No</yield></use></p>
+		    <p>
+		      score: <use types="text"><yield type="text" delete="no">0.0</yield></use>
+		    </p>
+		  </li>
+		</yield>
+	      </use>
+	      </ul>
+	  </div>
+	</li>
+      </component>
+      <component name="Alternative">
+	<li>
+	  <p><use types="text"><yield type="text" delete="no">Alternative description</yield></use></p>
+	  <p>
+	    score: <use types="text"><yield type="text" delete="no">1.0</yield></use>
+	  </p>
+	</li>
+      </component>
+    </library>
+
+    <!-- The #queule-body contains the body template. -->
+    <queule-body>
+
+      <h2>
+	<use types="text">
+	  <yield type="text">Questionnaire title</yield>
+	</use>
+      </h2>
+      <div><use types="textarea" label="Add instructions or a description to this questionnaire"/></div>
+
+      <div id="questionnaire-sections">
+	<use types="QuestionnaireSection" repeat="true" label="Add a new section"/>
+      </div>
+
+    </queule-body>
+
+  </body>
+
+</html>

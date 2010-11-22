@@ -1,0 +1,36 @@
+body {
+    margin: 2em auto 2em auto;
+    width: 600px;
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+p {
+    text-align: justify;
+}
+
+textarea {
+    width: 100%;
+}
+
+.questionnaire-section {
+    margin: 1em 0 1em 0;
+    background-color: #fff;
+    padding: 5px 10px 5px 10px;
+}
+.questionnaire-section h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#questionnaire-sections {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    background-color: #eee;
+}
+.questionnaire-question {
+    background: #eee;
+    border-top: 1px solid #ddd;
+    padding: 3px 10px 3px 10px;
+}

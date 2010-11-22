@@ -1,0 +1,52 @@
+.queule-yield-text-content {
+    border: 1px dotted #bb4;
+    padding: 1px 2px 1px 2px;
+    margin: 1px;
+    display: inline;
+}
+a.queule-yield-edit-link {
+    background-color: #ff8;
+    color: #970;
+    font-style: italic;
+    padding: 1px 5px 1px 5px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+.queule-selector {
+    background-color: #eee;
+    padding: 5px;
+}
+
+/* */
+
+a.queule-field {
+    padding: 2px 20px 2px 2px;
+    color: #555;
+    text-decoration: none;
+    background: url('edit.png') no-repeat right center;
+}
+a.queule-field:hover {
+    text-decoration: underline;
+    background-color: #ffa;
+}
+
+/* Style for the interface to add a new element */
+
+.queule-add {
+    padding: 5px 5px 5px 20px;
+    font-family: serif;
+    font-style: italic;
+    background: url('add.png') no-repeat left center;
+}
+.queule-add a {
+    color: #07f;
+}
+
+/* Style for the interface to delete an element */
+
+a.queule-delete {
+    padding: 2px;
+    margin-left: 2px;
+    background: url('delete.png') no-repeat center center;
+    text-decoration: none;
+}
