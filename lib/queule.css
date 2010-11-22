@@ -29,6 +29,23 @@ a.queule-yield-edit-link {
     background-color: #ffa;
 }
 
+div.queule-action-container {
+    text-align: right;
+    padding: 6px 10px 0 10px;
+    margin: 2px 0 0 auto;
+    display: table;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+}
+div.queule-field-container {
+    /*float: left;*/
+}
+div.queule-yield-container {
+    /*display: table;*/
+}
+
 a.queule-update {
     padding: 2px;
     text-decoration: none;
@@ -63,4 +80,8 @@ a.queule-delete {
 }
 a.queule-delete:hover {
     background: url('delete-over.png') no-repeat center center;
+}
+
+.queule-action-container a {
+    text-decoration: none;
 }
