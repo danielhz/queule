@@ -34,3 +34,7 @@ textarea {
     border-top: 1px solid #ddd;
     padding: 3px 10px 3px 10px;
 }
+.alternative {
+    background-color: #fff;
+    padding: 2px 5px 2px 5px;
+}

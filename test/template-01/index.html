@@ -49,17 +49,17 @@
 	    <ul>
 	      <use types="Alternative" label="Add a alternative" repeat="true">
 		<yield type="Alternative">
-		  <li>
-		    <p><use types="text"><yield type="text" delete="no">Yes</yield></use></p>
+		  <li class="alternative">
 		    <p>
+		      <use types="text"><yield type="text" delete="no">Yes</yield></use>
 		      score: <use types="text"><yield type="text" delete="no">1.0</yield></use>
 		    </p>
 		  </li>
 		</yield>
 		<yield type="Alternative">
-		  <li>
-		    <p><use types="text"><yield type="text" delete="no">No</yield></use></p>
+		  <li class="alternative">
 		    <p>
+		      <use types="text"><yield type="text" delete="no">No</yield></use>
 		      score: <use types="text"><yield type="text" delete="no">0.0</yield></use>
 		    </p>
 		  </li>
@@ -70,9 +70,9 @@
 	</li>
       </component>
       <component name="Alternative">
-	<li>
-	  <p><use types="text"><yield type="text" delete="no">Alternative description</yield></use></p>
+	<li class="alternative">
 	  <p>
+	    <use types="text"><yield type="text" delete="no">Alternative description</yield></use>
 	    score: <use types="text"><yield type="text" delete="no">1.0</yield></use>
 	  </p>
 	</li>
