@@ -27,7 +27,7 @@ a.queule-field {
 }
 a.queule-field:hover {
     text-decoration: underline;
-    background-color: #ffa;
+    background: #ffa url('edit-over.png') no-repeat right center;
 }
 
 /* Style for the interface to add a new element */
@@ -37,6 +37,9 @@ a.queule-field:hover {
     font-family: serif;
     font-style: italic;
     background: url('add.png') no-repeat left center;
+}
+.queule-add:hover {
+    background: url('add-over.png') no-repeat left center;
 }
 .queule-add a {
     color: #07f;
@@ -49,4 +52,7 @@ a.queule-delete {
     margin-left: 2px;
     background: url('delete.png') no-repeat center center;
     text-decoration: none;
+}
+a.queule-delete:hover {
+    background: url('delete-over.png') no-repeat center center;
 }
