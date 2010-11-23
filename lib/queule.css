@@ -64,6 +64,24 @@ a.queule-update:hover {
     background: url('edit-over.png') no-repeat center center;
 }
 
+a.queule-up {
+    padding: 2px;
+    text-decoration: none;
+    background: url('up.png') no-repeat center center;
+}
+a.queule-up:hover {
+    background: url('up-over.png') no-repeat center center;
+}
+
+a.queule-down {
+    padding: 2px;
+    text-decoration: none;
+    background: url('down.png') no-repeat center center;
+}
+a.queule-down:hover {
+    background: url('down-over.png') no-repeat center center;
+}
+
 /* Style for the interface to add a new element */
 
 .queule-add {
