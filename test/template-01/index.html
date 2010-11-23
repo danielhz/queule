@@ -35,15 +35,15 @@
 	    </use>
 	  </h2>
 	  <div><use types="textarea" label="Add instructions or a description to this section"/></div>
-	  <ol><use types="QuestionnaireQuestion" label="Add a question" repeat="true"/></ol>
+	  <ol><use types="RatioQuestion CheckQuestion TextQuestion" label="Add a question of type " repeat="true"/></ol>
 	</div>
       </component>
-      <component name="QuestionnaireQuestion">
+      <component name="RatioQuestion">
 	<li class="questionnaire-question">
-	  <p><use types="text"><yield type="text" delete="no">Question description</yield></use></p>
 	  <p>
-	    weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>
-	    type:  <use types="text"><yield type="text" delete="no">radio</yield></use>
+	    Radio-Question:
+	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
+	    (weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
 	  </p>
 	  <div>
 	    <ul>
@@ -52,7 +52,7 @@
 		  <li class="alternative">
 		    <p>
 		      <use types="text"><yield type="text" delete="no">Yes</yield></use>
-		      score: <use types="text"><yield type="text" delete="no">1.0</yield></use>
+		      (score: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
 		    </p>
 		  </li>
 		</yield>
@@ -60,13 +60,52 @@
 		  <li class="alternative">
 		    <p>
 		      <use types="text"><yield type="text" delete="no">No</yield></use>
-		      score: <use types="text"><yield type="text" delete="no">0.0</yield></use>
+		      (score: <use types="text"><yield type="text" delete="no">0.0</yield></use>)
 		    </p>
 		  </li>
 		</yield>
 	      </use>
 	      </ul>
 	  </div>
+	</li>
+      </component>
+      <component name="CheckQuestion">
+	<li class="questionnaire-question">
+	  <p>
+	    Check-Question:
+	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
+	    (weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
+	  </p>
+	  <div>
+	    <ul>
+	      <use types="Alternative" label="Add a alternative" repeat="true">
+		<yield type="Alternative">
+		  <li class="alternative">
+		    <p>
+		      <use types="text"><yield type="text" delete="no">Check item 1</yield></use>
+		      (score: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
+		    </p>
+		  </li>
+		</yield>
+		<yield type="Alternative">
+		  <li class="alternative">
+		    <p>
+		      <use types="text"><yield type="text" delete="no">Check item 2</yield></use>
+		      (score: <use types="text"><yield type="text" delete="no">0.0</yield></use>)
+		    </p>
+		  </li>
+		</yield>
+	      </use>
+	      </ul>
+	  </div>
+	</li>
+      </component>
+      <component name="TextQuestion">
+	<li class="questionnaire-question">
+	  <p>
+	    Text-Question:
+	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
+	  </p>
 	</li>
       </component>
       <component name="Alternative">
