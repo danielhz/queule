@@ -13,23 +13,23 @@ textarea {
     width: 100%;
 }
 
-.questionnaire-section {
+.form-section {
     margin: 0 0 1em 0;
     background-color: #fff;
     padding: 5px 10px 5px 10px;
 }
-.questionnaire-section h2 {
+.form-section h2 {
     font-size: 1.2em;
     font-weight: bold;
 }
 
-#questionnaire-sections {
+#form-sections {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px 0 0 0;
     background-color: #eee;
 }
-.questionnaire-question {
+.form-question {
     background: #eee;
     padding: 3px 10px 3px 10px;
 }

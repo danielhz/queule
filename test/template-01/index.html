@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Questionnaire Template</title>
+    <title>Form Template</title>
     <link rel="stylesheet" type="text/css" href="../../lib/queule.css"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="../../lib/prototype.js"></script>
@@ -16,10 +16,10 @@
 
   <body>
 
-    <h1>Questionnaire template</h1>
+    <h1>Form template</h1>
 
     <p>
-      This template defines a simple questionnaire. The questionnaire
+      This template defines a simple form. The form
       is structured by sections. Each section is composed by a list
       of questions. Also, each question has a list of possible
       alternatives.
@@ -27,19 +27,19 @@
 
     <!-- The #queule-library div defines types for this template. -->
     <library>
-      <component name="QuestionnaireSection">
-	<div class="questionnaire-section">
-	  <h2 class="questionnaire-section-title">
+      <component name="FormSection">
+	<div class="form-section">
+	  <h2 class="form-section-title">
 	    <use types="text">
 	      <yield type="text" delete="no">Section title</yield>
 	    </use>
 	  </h2>
 	  <div><use types="textarea" label="Add instructions or a description to this section"/></div>
-	  <ol><use types="RatioQuestion CheckQuestion TextQuestion" label="Add a question of type " repeat="true"/></ol>
+	  <ol><use types="RadioQuestion CheckQuestion TextQuestion" label="Add a question of type " repeat="true"/></ol>
 	</div>
       </component>
-      <component name="RatioQuestion">
-	<li class="questionnaire-question">
+      <component name="RadioQuestion">
+	<li class="form-question">
 	  <p>
 	    Radio-Question:
 	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
@@ -70,7 +70,7 @@
 	</li>
       </component>
       <component name="CheckQuestion">
-	<li class="questionnaire-question">
+	<li class="form-question">
 	  <p>
 	    Check-Question:
 	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
@@ -101,7 +101,7 @@
 	</li>
       </component>
       <component name="TextQuestion">
-	<li class="questionnaire-question">
+	<li class="form-question">
 	  <p>
 	    Text-Question:
 	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
@@ -123,13 +123,13 @@
 
       <h2>
 	<use types="text">
-	  <yield type="text" delete="no">Questionnaire title</yield>
+	  <yield type="text" delete="no">Form title</yield>
 	</use>
       </h2>
-      <div><use types="textarea" label="Add instructions or a description to this questionnaire"/></div>
+      <div><use types="textarea" label="Add instructions or a description to this form"/></div>
 
-      <div id="questionnaire-sections">
-	<use types="QuestionnaireSection" repeat="true" label="Add a new section"/>
+      <div id="form-sections">
+	<use types="FormSection" repeat="true" label="Add a new section"/>
       </div>
 
     </queule-body>
