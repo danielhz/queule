@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+require 'rubygems'
+require 'rake'
+require 'rspec'
+require 'rspec/core/rake_task'
+require 'yard'
+require 'rcov'
+
+task :default => :specs
+
+desc 'Run all specs'
+RSpec::Core::RakeTask.new(:specs) do |t|
+  t.rspec_opts = ["--colour", "--format", "documentation"]
+end
+
+desc 'Coverage for all specs'
+RSpec::Core::RakeTask.new(:rcov) do |t|
+  t.rcov = true
+  t.rcov_opts =  %q[--exclude "spec"]
+  t.verbose = true
+end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "queule"
+    gemspec.authors = ["Daniel Hernández"]
+    gemspec.email = "daniel@degu.cl"
+    gemspec.homepage = "http://github.com/danielhz/queule"
+    gemspec.summary = "Minimalist library to build web appplications on top of rack"
+    gemspec.rubyforge_project = "queule"
+    gemspec.description = "Queule..."
+  end
+rescue LoadError
+end
+
+YARD::Rake::YardocTask.new do |t|
+  t.options += ['--title', "Queule Documentation"]
+end
+
+desc 'Build and upload the last gem file'
+task :gem_push => :build do
+  gem = Dir['pkg/*.gem'].map { |f|
+    [f, File.basename(f).gsub(/.gem$/, '').gsub(/^queule-/, '').split('.').map{ |x| x.to_i}]
+  }.sort.last
+  puts "gem push #{gem[0]}"
+  system "gem push #{gem[0]}"
+end
