@@ -16,120 +16,38 @@
 
   <body>
 
-    <h1>Form template</h1>
+    <h1>Organizations template</h1>
 
     <p>
-      This template defines a simple form. The form
-      is structured by sections. Each section is composed by a list
-      of questions. Also, each question has a list of possible
-      alternatives.
+      This template defines a hierarchical structure of an organization.
     </p>
 
     <!-- The #queule-library div defines types for this template. -->
     <library>
-      <component name="FormSection">
-	<div class="form-section">
-	  <h2 class="form-section-title">
+      <component name="Organization">
+	<div class="organization">
+	  <h2 class="organization-name">
 	    <use types="text">
-	      <yield type="text" delete="no">Section title</yield>
+	      <yield type="text" delete="no">Code</yield>
+	    </use>
+            —
+	    <use types="text">
+	      <yield type="text" delete="no">Name</yield>
 	    </use>
 	  </h2>
-	  <div><use types="textarea" label="Add instructions or a description to this section"/></div>
-	  <ol><use types="RadioQuestion CheckQuestion TextQuestion" label="Add a question of type " repeat="true"/></ol>
+	  <div><use types="textarea" label="Add description"/></div>
+	  <div class="organizations">
+            <use types="Organization" label="Add a organization" repeat="true"/>
+          </div>
 	</div>
-      </component>
-      <component name="RadioQuestion">
-	<li class="form-question">
-	  <p>
-	    Radio-Question:
-	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
-	    (weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
-	  </p>
-	  <div>
-	    <ul>
-	      <use types="Alternative" label="Add a alternative" repeat="true">
-		<yield type="Alternative" id="1">
-		  <li class="alternative">
-		    <p>
-		      <use types="text"><yield type="text" delete="no">Yes</yield></use>
-		      (score: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
-		    </p>
-		  </li>
-		</yield>
-		<yield type="Alternative" id="2">
-		  <li class="alternative">
-		    <p>
-		      <use types="text"><yield type="text" delete="no">No</yield></use>
-		      (score: <use types="text"><yield type="text" delete="no">0.0</yield></use>)
-		    </p>
-		  </li>
-		</yield>
-	      </use>
-	      </ul>
-	  </div>
-	</li>
-      </component>
-      <component name="CheckQuestion">
-	<li class="form-question">
-	  <p>
-	    Check-Question:
-	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
-	    (weight: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
-	  </p>
-	  <div>
-	    <ul>
-	      <use types="Alternative" label="Add a alternative" repeat="true">
-		<yield type="Alternative">
-		  <li class="alternative">
-		    <p>
-		      <use types="text"><yield type="text" delete="no">Check item 1</yield></use>
-		      (score: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
-		    </p>
-		  </li>
-		</yield>
-		<yield type="Alternative">
-		  <li class="alternative">
-		    <p>
-		      <use types="text"><yield type="text" delete="no">Check item 2</yield></use>
-		      (score: <use types="text"><yield type="text" delete="no">0.0</yield></use>)
-		    </p>
-		  </li>
-		</yield>
-	      </use>
-	      </ul>
-	  </div>
-	</li>
-      </component>
-      <component name="TextQuestion">
-	<li class="form-question">
-	  <p>
-	    Text-Question:
-	    <use types="text"><yield type="text" delete="no">Question description</yield></use>
-	  </p>
-	</li>
-      </component>
-      <component name="Alternative">
-	<li class="alternative">
-	  <p>
-	    <use types="text"><yield type="text" delete="no">Alternative description</yield></use>
-	    (score: <use types="text"><yield type="text" delete="no">1.0</yield></use>)
-	  </p>
-	</li>
       </component>
     </library>
 
     <!-- The #queule-body contains the body template. -->
     <queule-body>
 
-      <h2>
-	<use types="text">
-	  <yield type="text" delete="no">Form title</yield>
-	</use>
-      </h2>
-      <div><use types="textarea" label="Add instructions or a description to this form"/></div>
-
-      <div id="form-sections">
-	<use types="FormSection" repeat="true" label="Add a new section"/>
+      <div class="organizations">
+	<use types="Organization" repeat="true" label="Add a new organization"/>
       </div>
 
     </queule-body>

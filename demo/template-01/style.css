@@ -13,28 +13,14 @@ textarea {
     width: 100%;
 }
 
-.form-section {
+.organization {
     margin: 0 0 1em 0;
     background-color: #fff;
     padding: 5px 10px 5px 10px;
 }
-.form-section h2 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-#form-sections {
+.organizations {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px 0 0 0;
     background-color: #eee;
-}
-.form-question {
-    background: #eee;
-    padding: 3px 10px 3px 10px;
-}
-.alternative {
-    background-color: #fff;
-    padding: 2px 5px 2px 5px;
-    margin-bottom: 4px;
 }
